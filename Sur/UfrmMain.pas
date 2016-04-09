@@ -83,7 +83,6 @@ var
   EquipChar:string;
   MrConnStr:string;
   ifConnSucc:boolean;
-  ValueMaxNum:integer;
   ifRecLog:boolean;//是否记录调试日志
 
 //  RFM:STRING;       //返回数据
@@ -229,8 +228,6 @@ begin
   QuaContSpecNo:=ini.ReadString(IniSection,'常值质控联机号','9998');
   QuaContSpecNoD:=ini.ReadString(IniSection,'低值质控联机号','9997');
       
-  ValueMaxNum:=ini.ReadInteger(IniSection,'MIC结果最大字符数',15);
-
   MrConnStr:=ini.ReadString(IniSection,'连接仪器数据库','');
 
   ini.Free;
@@ -312,8 +309,7 @@ begin
       '调试日志'+#2+'CheckListBox'+#2+#2+'0'+#2+'注:强烈建议在正常运行时关闭'+#2+#3+
       '高值质控联机号'+#2+'Edit'+#2+#2+'2'+#2+#2+#3+
       '常值质控联机号'+#2+'Edit'+#2+#2+'2'+#2+#2+#3+
-      '低值质控联机号'+#2+'Edit'+#2+#2+'2'+#2+#2+#3+
-      'MIC结果最大字符数'+#2+'Edit'+#2+#2+'2'+#2+#2+#3;
+      '低值质控联机号'+#2+'Edit'+#2+#2+'2'+#2+#2+#3;
 
   if ShowOptionForm('',Pchar(IniSection),Pchar(ss),Pchar(ChangeFileExt(Application.ExeName,'.ini'))) then
 	  UpdateConfig;
