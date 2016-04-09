@@ -1,4 +1,8 @@
 江苏泽成
 CIA1200全自动化学发光测定仪
 
-读Access数据库
+读Access数据库:Results.mdb
+
+
+联机标识:
+AssayResult.Item的值
